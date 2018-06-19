@@ -36,6 +36,9 @@ PRODUCT_PACKAGES_DEBUG += \
     bootctl \
     update_engine_client
 
+# Boot Animtion
+TARGET_BOOTANIMATION_HALF_RES := true
+
 # Boot control HAL
 PRODUCT_PACKAGES += \
     bootctrl.qcom

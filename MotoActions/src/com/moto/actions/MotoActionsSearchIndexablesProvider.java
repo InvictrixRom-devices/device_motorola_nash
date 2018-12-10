@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.dirtyunicorns.settings.device;
+package com.moto.actions;
 
 import android.database.Cursor;
 import android.database.MatrixCursor;
@@ -49,10 +49,23 @@ public class MotoActionsSearchIndexablesProvider extends SearchIndexablesProvide
                     GestureSettingsActivity.class.getName(),
                     R.drawable.ic_settings_gestures)));
 
+        cursor.addRow(generateResourceRef(new SearchIndexableResource(1, R.xml.fp_gesture_panel,
+                    FPGestureSettingsActivity.class.getName(),
+                    R.drawable.ic_settings_fingerprint)));
+        cursor.addRow(generateResourceRef(new SearchIndexableResource(1, R.xml.fp_gesture_panel_indexable,
+                    FPGestureSettingsActivity.class.getName(),
+                    R.drawable.ic_settings_fingerprint)));
+
+        cursor.addRow(generateResourceRef(new SearchIndexableResource(1, R.xml.screen_off_gesture_panel,
+                    ScreenOffGestureSettingsActivity.class.getName(),
+                    R.drawable.ic_settings_screen_off_gestures)));
+        cursor.addRow(generateResourceRef(new SearchIndexableResource(1, R.xml.screen_off_gesture_panel_indexable,
+                    ScreenOffGestureSettingsActivity.class.getName(),
+                    R.drawable.ic_settings_screen_off_gestures)));
+
         cursor.addRow(generateResourceRef(new SearchIndexableResource(1, R.xml.doze_panel,
                     DozeSettingsActivity.class.getName(),
                     R.drawable.ic_settings_doze)));
-
         cursor.addRow(generateResourceRef(new SearchIndexableResource(1, R.xml.doze_panel_indexable,
                     DozeSettingsActivity.class.getName(),
                     R.drawable.ic_settings_doze)));
@@ -67,7 +80,7 @@ public class MotoActionsSearchIndexablesProvider extends SearchIndexablesProvide
         ref[COLUMN_INDEX_XML_RES_CLASS_NAME] = null;
         ref[COLUMN_INDEX_XML_RES_ICON_RESID] = sir.iconResId;
         ref[COLUMN_INDEX_XML_RES_INTENT_ACTION] = "com.android.settings.action.EXTRA_SETTINGS";
-        ref[COLUMN_INDEX_XML_RES_INTENT_TARGET_PACKAGE] = "com.dirtyunicorns.settings.device";
+        ref[COLUMN_INDEX_XML_RES_INTENT_TARGET_PACKAGE] = "com.moto.actions";
         ref[COLUMN_INDEX_XML_RES_INTENT_TARGET_CLASS] = sir.className;
         return ref;
     }
